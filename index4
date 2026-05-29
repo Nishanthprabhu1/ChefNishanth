@@ -51,7 +51,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
 .info-pill{border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:4px;}
 .info-pill svg{width:12px;height:12px;}
 
-/* ── FEATURE BANNERS ── */
+/* ── NEW FEATURE BANNERS ── */
 .feature-scroll{padding:12px 0 12px 16px;overflow-x:auto;scrollbar-width:none;display:flex;gap:10px;background:#fff;border-bottom:8px solid var(--bg);}
 .feature-scroll::-webkit-scrollbar{display:none;}
 .feat-card{min-width:140px;background:var(--org-light);border-radius:12px;padding:12px;cursor:pointer;border:1px solid #FFD0A0;flex-shrink:0;transition:transform .15s;}
@@ -241,7 +241,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
 </head>
 <body>
 
-<!-- CLEAN HEADER FOR CUSTOMERS (NO MANAGER OVERLAY LINKS OR TRACKING SHORTCUTS) -->
+<!-- HEADER -->
 <div class="header">
   <div class="header-main">
     <div class="back-btn">
@@ -255,7 +255,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
       <div class="search-icon-btn" onclick="focusSearch()">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </div>
-      <!-- Core Order Checkout System Pivot Pill -->
       <button class="cart-pill" onclick="openTableModal()" id="headerCartBtn" style="display:none;">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span id="headerCartCount">0</span>
@@ -297,7 +296,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   <div class="info-pill" onclick="openCallWaiter()" style="cursor:pointer;color:var(--green);border-color:var(--green);">🛎️ Call Waiter</div>
 </div>
 
-<!-- FEATURE CARDS -->
+<!-- FEATURE CARDS (NEW!) -->
 <div class="feature-scroll">
   <div class="feat-card" onclick="openAIRecommend()">
     <div class="feat-icon">🤖</div>
@@ -392,7 +391,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- TABLE SELECTION MODAL -->
+<!-- TABLE MODAL -->
 <div class="modal-overlay" id="tableModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">🪑</div>
@@ -404,7 +403,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
     </div>
     <button class="modal-confirm" onclick="confirmOrder()">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-      Send to Kitchen Dashboard
+      Send via WhatsApp
     </button>
     <div class="modal-cancel" onclick="closeModal('tableModal')">Cancel</div>
   </div>
@@ -469,7 +468,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
       <button class="copy-btn" onclick="showToast('Link copied! 📋')">Copy</button>
     </div>
     <div style="font-size:13px;font-weight:600;margin-bottom:10px;color:var(--muted);">Already joined (3/8)</div>
-    <div class="group-person"><div class="gp-avatar">You</div><div style="flex:1;"><div class="gp-name">You (Host)</div><div class="gp-items">2 items • ₹760</div></div><div class="gp-status">✓ Ready</div></div>
+    <div class="group-person"><div class="gp-avatar">Y</div><div style="flex:1;"><div class="gp-name">You (Host)</div><div class="gp-items">2 items • ₹760</div></div><div class="gp-status">✓ Ready</div></div>
     <div class="group-person"><div class="gp-avatar" style="background:#E8F8EE;color:var(--green);">R</div><div style="flex:1;"><div class="gp-name">Rahul</div><div class="gp-items">1 item • ₹380</div></div><div class="gp-status">✓ Ready</div></div>
     <div class="group-person"><div class="gp-avatar" style="background:#F0EAFF;color:#6B2FBF;">P</div><div style="flex:1;"><div class="gp-name">Priya</div><div class="gp-items">Browsing...</div></div><div style="font-size:11px;color:var(--muted);">Pending</div></div>
     <button class="modal-confirm" style="margin-top:16px;" onclick="closeModal('groupModal')">Place Group Order</button>
@@ -521,13 +520,15 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- SENDING SCREEN -->
+<!-- SENDING -->
 <div class="sending" id="sendingOverlay">
   <div class="spinner"></div>
-  <div class="sending-txt">Sending your order directly to kitchen…</div>
+  <div class="sending-txt">Sending your order…</div>
 </div>
 
 <script>
+const WHATSAPP = '917019743880';
+
 const menuData = [
   {cat:'starters',name:'Crispy Chicken Lollipop',type:'nonveg',price:320,bestseller:true,emoji:'🍗',liked:94,
    desc:'Tender chicken drumettes marinated in chef\'s signature spice blend, flash-fried to golden perfection.',
@@ -868,66 +869,25 @@ function reorderLast(){
   closeModal('reorderModal');updateCartUI();renderMenu();showToast('Last order added to cart! 🔁');
 }
 
-/* ── CLOUD NETWORK CONNECTION PIPELINE ── */
+/* ── CONFIRM ORDER ── */
 async function confirmOrder(){
-  const t = document.getElementById('tableInput').value.trim();
-  if(!t){
-    document.getElementById('tableInput').style.borderColor = 'var(--red)';
-    setTimeout(() => document.getElementById('tableInput').style.borderColor = '', 1500);
-    return;
-  }
-  
+  const t=document.getElementById('tableInput').value.trim();
+  if(!t){document.getElementById('tableInput').style.borderColor='var(--red)';setTimeout(()=>document.getElementById('tableInput').style.borderColor='',1500);return;}
   closeModal('tableModal');
   document.getElementById('sendingOverlay').classList.add('show');
-  
-  const now = new Date();
-  const keys = Object.keys(cart);
-  const total = keys.reduce((s, k) => s + cart[k].price, 0);
-  
-  const structuredItems = keys.map(k => {
-    const entry = cart[k].entries[0] || { qty: cart[k].qty, u: cart[k].price / cart[k].qty };
-    return {
-      name: k,
-      qty: cart[k].qty,
-      unitPrice: entry.u,
-      subtotal: cart[k].price
-    };
-  });
-
-  const payload = {
-    date: now.toLocaleDateString('en-GB'), 
-    time: now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true }),
-    table: t,
-    items: structuredItems,
-    orderTotal: total
-  };
-
-  // Your deployed Google Apps Script Macro Web URL
-  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx1NKLHHvtUAUKvI6LHVAKlfS4uRf24tgRxWln3FXtw2YPmueXgIp-kphYIKpQnOuAiBA/exec';
-
-  try {
-    const response = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, 
-      body: JSON.stringify(payload)
-    });
-    
-    const resData = await response.json();
-    
-    if (resData.status === 'success') {
-      Object.keys(cart).forEach(k => delete cart[k]);
-      updateCartUI();
-      renderMenu();
-      showToast('Order sent directly to kitchen dashboard! 🧑‍🍳🎉');
-    } else {
-      throw new Error(resData.message || 'Server processed an anomalous tracking event.');
-    }
-  } catch (error) {
-    console.error("Pipeline mapping error:", error);
-    showToast('Failed to connect to kitchen. Please alert your waiter! ❌');
-  } finally {
+  const now=new Date();
+  const keys=Object.keys(cart);
+  const total=keys.reduce((s,k)=>s+cart[k].price,0);
+  let msg=`🍽️ *New Order — Chef Nishanth*\n📍 *Table:* ${t}\n🕐 *Time:* ${now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true})}\n━━━━━━━━━━━━━━━━━\n`;
+  keys.forEach(k=>{cart[k].entries.forEach(e=>{msg+=`▸ ${k} ×${e.qty} — ₹${(e.u*e.qty).toLocaleString('en-IN')}\n`;});});
+  msg+=`━━━━━━━━━━━━━━━━━\n💰 *Total: ₹${total.toLocaleString('en-IN')}*`;
+  setTimeout(()=>{
     document.getElementById('sendingOverlay').classList.remove('show');
-  }
+    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');
+    Object.keys(cart).forEach(k=>delete cart[k]);
+    updateCartUI();renderMenu();
+    showToast('Order sent via WhatsApp! 🎉');
+  },800);
 }
 
 /* ── FILTER ── */
