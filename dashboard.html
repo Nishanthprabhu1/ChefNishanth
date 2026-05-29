@@ -61,7 +61,9 @@ body { font-family: 'Poppins', sans-serif; background: var(--color-bg-page); col
 .loading-state { text-align: center; padding: 40px; color: var(--color-text-muted); font-size: 14px; }
 </style>
 </head>
-<body style="display: none;" id="dashboardContainer"> <div class="topbar">
+<body style="display: none;" id="dashboardContainer">
+
+  <div class="topbar">
     <div class="topbar-left">
       <div class="sheets-icon">
         <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" fill="#34a853"/><rect x="6" y="8" width="12" height="1.5" rx="0.75" fill="white"/><rect x="6" y="11.5" width="12" height="1.5" rx="0.75" fill="white"/><rect x="6" y="15" width="8" height="1.5" rx="0.75" fill="white"/></svg>
@@ -111,22 +113,18 @@ body { font-family: 'Poppins', sans-serif; background: var(--color-bg-page); col
   </div>
 
 <script>
-  // Your secure manager/kitchen master login PIN configuration code
   const MANAGER_PIN = "7019"; 
-
-  // Direct cloud network tracking path parameters endpoint link
   const SCRIPT_API_URL = 'https://script.google.com/macros/s/AKfycbx1NKLHHvtUAUKvI6LHVAKlfS4uRf24tgRxWln3FXtw2YPmueXgIp-kphYIKpQnOuAiBA/exec';
 
   function checkAccess() {
     const enteredPin = prompt("🔑 Access Restricted. Enter Manager PIN to view Dashboard:");
     
     if (enteredPin === MANAGER_PIN) {
-      // Un-hide the entire element view box if authentication matches perfectly
       document.getElementById('dashboardContainer').style.display = 'block';
       fetchDashboardData();
     } else {
       alert("❌ Incorrect PIN. Access Denied.");
-      document.body.style.display = 'block'; // Fallback display parameters instantiation
+      document.body.style.display = 'block'; 
       document.body.innerHTML = `
         <div style="text-align:center; margin-top:120px; font-family:'Poppins',sans-serif; padding: 20px;">
           <h1 style="color:#e23744; font-size: 32px; margin-bottom: 10px;">🔒 Access Denied</h1>
@@ -164,7 +162,6 @@ body { font-family: 'Poppins', sans-serif; background: var(--color-bg-page); col
         let totalRevenue = 0;
         let uniqueTables = new Set();
 
-        // Render logs in chronological descending layout order (newest on top)
         rows.reverse().forEach(row => {
           const subtotal = parseFloat(row.subtotal) || 0;
           totalRevenue += subtotal;
@@ -204,14 +201,12 @@ body { font-family: 'Poppins', sans-serif; background: var(--color-bg-page); col
     }
   }
 
-  // Poll loop background interval update tasks execution engine cycle
   setInterval(() => {
     if(document.getElementById('ordersTable').style.display === 'table') {
       fetchDashboardData();
     }
   }, 15000);
   
-  // Pivot entry initialization call assignments
   window.onload = checkAccess;
 </script>
 </body>

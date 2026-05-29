@@ -241,7 +241,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
 </head>
 <body>
 
-<!-- CLEAN HEADER FOR CUSTOMERS (NO MANAGER OVERLAY LINKS OR TRACKING SHORTCUTS) -->
 <div class="header">
   <div class="header-main">
     <div class="back-btn">
@@ -255,7 +254,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
       <div class="search-icon-btn" onclick="focusSearch()">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </div>
-      <!-- Core Order Checkout System Pivot Pill -->
       <button class="cart-pill" onclick="openTableModal()" id="headerCartBtn" style="display:none;">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span id="headerCartCount">0</span>
@@ -264,7 +262,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero-banner">
   <div class="hero-img-row"><div class="hero-emoji-big">🍽️</div></div>
   <div class="hero-dark-overlay">
@@ -282,13 +279,11 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- OFFER -->
 <div class="offer-strip">
   <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
   <div class="offer-text">🎉 Use WELCOME50 — 50% off up to ₹100 on your first order</div>
 </div>
 
-<!-- INFO ROW -->
 <div class="info-row">
   <div class="info-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11am–11pm, Open Now</div>
   <div class="info-pill">🛡 FSSAI Certified</div>
@@ -297,7 +292,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   <div class="info-pill" onclick="openCallWaiter()" style="cursor:pointer;color:var(--green);border-color:var(--green);">🛎️ Call Waiter</div>
 </div>
 
-<!-- FEATURE CARDS -->
 <div class="feature-scroll">
   <div class="feat-card" onclick="openAIRecommend()">
     <div class="feat-icon">🤖</div>
@@ -331,7 +325,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- VEG TOGGLE -->
 <div class="veg-toggle-row">
   <span class="veg-toggle-label">Show:</span>
   <div class="veg-icon"></div>
@@ -339,13 +332,11 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   <span class="veg-toggle-label">Veg only</span>
 </div>
 
-<!-- SEARCH BAR -->
 <div class="search-bar">
   <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
   <input type="text" placeholder="Search dishes, cuisines..." id="searchInput" oninput="filterMenu()"/>
 </div>
 
-<!-- CATEGORY CHIPS -->
 <div class="cat-filter" id="catFilter">
   <div class="cat-chip active" onclick="filterCat('all',this)">All</div>
   <div class="cat-chip" onclick="filterCat('starters',this)">Starters</div>
@@ -358,7 +349,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
 
 <div id="menuContainer"></div>
 
-<!-- CART FOOTER -->
 <div class="cart-footer" id="cartFooter">
   <button class="cart-btn-full" onclick="openTableModal()">
     <div class="cart-btn-left">
@@ -369,13 +359,10 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </button>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- OVERLAY -->
 <div class="overlay" id="overlay" onclick="closeAllSheets()"></div>
 
-<!-- ITEM BOTTOM SHEET -->
 <div class="bottom-sheet" id="bottomSheet">
   <div class="sheet-handle"></div>
   <div class="sheet-item-img" id="sheetImg">🍛</div>
@@ -392,7 +379,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- TABLE SELECTION MODAL -->
 <div class="modal-overlay" id="tableModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">🪑</div>
@@ -410,7 +396,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- SPLIT BILL MODAL -->
 <div class="modal-overlay" id="splitModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">✂️</div>
@@ -432,7 +417,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- AI RECOMMEND MODAL -->
 <div class="modal-overlay" id="aiModal">
   <div class="modal-box" style="max-height:80vh;overflow-y:auto;padding-bottom:20px;">
     <div class="ai-bubble">
@@ -447,7 +431,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- UPSELL MODAL -->
 <div class="modal-overlay" id="upsellModal">
   <div class="modal-box">
     <div style="font-size:28px;text-align:center;margin-bottom:6px;">🍟</div>
@@ -458,7 +441,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- GROUP ORDER MODAL -->
 <div class="modal-overlay" id="groupModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">👥</div>
@@ -476,7 +458,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- REORDER MODAL -->
 <div class="modal-overlay" id="reorderModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">🔁</div>
@@ -498,7 +479,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- CALL WAITER MODAL -->
 <div class="modal-overlay" id="waiterModal">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px;">🛎️</div>
@@ -521,7 +501,6 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min
   </div>
 </div>
 
-<!-- SENDING SCREEN -->
 <div class="sending" id="sendingOverlay">
   <div class="spinner"></div>
   <div class="sending-txt">Sending your order directly to kitchen…</div>
@@ -861,14 +840,14 @@ function reorderLast(){
     {name:'Butter Chicken Masala',p:380},{name:'Garlic Kulcha',p:80},{name:'Mango Lassi',p:120}
   ];
   items.forEach(({name,p})=>{
-    const item=menuData.find(i=>i.name===name);if(!item)return;
+    const item=menuData.find(i=>ek(i.name)===name);if(!item)return;
     if(!cart[name])cart[name]={item,qty:0,price:0,entries:[]};
     cart[name].qty+=1;cart[name].price+=p;cart[name].entries.push({qty:1,u:p});
   });
   closeModal('reorderModal');updateCartUI();renderMenu();showToast('Last order added to cart! 🔁');
 }
 
-/* ── CLOUD NETWORK CONNECTION PIPELINE ── */
+/* ── DIRECT PRODUCTION API TRANSACTION LINE ── */
 async function confirmOrder(){
   const t = document.getElementById('tableInput').value.trim();
   if(!t){
@@ -902,7 +881,6 @@ async function confirmOrder(){
     orderTotal: total
   };
 
-  // Your deployed Google Apps Script Macro Web URL
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx1NKLHHvtUAUKvI6LHVAKlfS4uRf24tgRxWln3FXtw2YPmueXgIp-kphYIKpQnOuAiBA/exec';
 
   try {
@@ -920,10 +898,10 @@ async function confirmOrder(){
       renderMenu();
       showToast('Order sent directly to kitchen dashboard! 🧑‍🍳🎉');
     } else {
-      throw new Error(resData.message || 'Server processed an anomalous tracking event.');
+      throw new Error(resData.message || 'Server processed an analytical tracking anomaly.');
     }
   } catch (error) {
-    console.error("Pipeline mapping error:", error);
+    console.error("Transmission error tracking parameters:", error);
     showToast('Failed to connect to kitchen. Please alert your waiter! ❌');
   } finally {
     document.getElementById('sendingOverlay').classList.remove('show');
