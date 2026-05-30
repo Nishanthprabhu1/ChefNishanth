@@ -881,8 +881,7 @@ async function confirmOrder(){
     orderTotal: total
   };
 
-  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzKpYr2hloN9du9qdO5MQBBex82z9RCFo2vV5FwMzE-E1cRhs-PAgT3fTUD_-jR-UZ0aA/exec';
-
+  const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzZ2zD5LzfrdLyQGGHgevXCCKlWqmr8Hcyx4L8s-WuDzzZYnuYEHWNUasco5lrIqMQV/exec';
   try {
     const response = await fetch(WEBHOOK_URL, {
       method: 'POST',
